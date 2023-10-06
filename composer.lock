@@ -3112,12 +3112,12 @@
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "symfony/polyfill-php81": "^1.23"
+                "symfony/polyfill-php81": "^1.23",
+                "fakerphp/faker": "^1.21",
             },
             "require-dev": {
                 "captainhook/plugin-composer": "^5.3",
                 "ergebnis/composer-normalize": "^2.28.3",
-                "fakerphp/faker": "^1.21",
                 "hamcrest/hamcrest-php": "^2.0",
                 "jangregor/phpstan-prophecy": "^1.0",
                 "mockery/mockery": "^1.5",

@@ -2,7 +2,6 @@
 echo "Running composer"
 composer global require hirak/prestissimo
 composer install --no-dev --working-dir=/var/www/html
-composer require fzaninotto/faker
 
 echo "Running npm install"
 npm install
@@ -17,4 +16,4 @@ echo "Caching routes..."
 php artisan route:cache
 
 echo "Running migrations..."
-php artisan migrate:refresh --seed --force
+php artisan migrate:fresh --seed --force
