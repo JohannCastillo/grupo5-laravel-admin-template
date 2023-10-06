@@ -538,35 +538,35 @@
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-primary" type="button">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
+                          <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb')}}"></use>
                         </svg> Standard Button
                       </button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-outline-secondary" type="button">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
+                          <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb')}}"></use>
                         </svg> Outline Button
                       </button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-ghost-success" type="button">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
+                          <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb')}}"></use>
                         </svg> Ghost Button
                       </button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-square btn-warning" type="button">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
+                          <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb')}}"></use>
                         </svg> Square Button
                       </button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-pill btn-danger" type="button">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
+                          <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb')}}"></use>
                         </svg> Pill Button
                       </button>
                     </div>

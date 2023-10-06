@@ -265,13 +265,13 @@
                     <div class="card-header">Card actions
                       <div class="card-header-actions"><a class="card-header-action btn-setting" href="#">
                           <svg class="c-icon">
-                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-settings"></use>
+                            <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-settings')}}"></use>
                           </svg></a><a class="card-header-action btn-minimize" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
                           <svg class="c-icon">
-                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-arrow-circle-top"></use>
+                            <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-arrow-circle-top')}}"></use>
                           </svg></a><a class="card-header-action btn-close" href="#">
                           <svg class="c-icon">
-                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-x-circle"></use>
+                            <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-x-circle')}}"></use>
                           </svg></a></div>
                     </div>
                     <div class="collapse show" id="collapseExample">

@@ -71,15 +71,15 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home2" role="tab" aria-controls="home">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-calculator"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-calculator')}}"></use>
                         </svg></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-basket"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-basket')}}"></use>
                         </svg></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages2" role="tab" aria-controls="messages">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie')}}"></use>
                         </svg></a></li>
                   </ul>
                   <div class="tab-content">
@@ -93,15 +93,15 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home3" role="tab" aria-controls="home">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-calculator"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-calculator')}}"></use>
                         </svg> Calculator</a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-basket"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-basket')}}"></use>
                         </svg> Shoping cart</a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages3" role="tab" aria-controls="messages">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie')}}"></use>
                         </svg> Charts</a></li>
                   </ul>
                   <div class="tab-content">
@@ -115,15 +115,15 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home4" role="tab" aria-controls="home">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-calculator"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-calculator')}}"></use>
                         </svg> Calculator<span class="badge badge-success">New</span></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-basket"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-basket')}}"></use>
                         </svg> Shoping cart<span class="badge badge-pill badge-danger">29</span></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages4" role="tab" aria-controls="messages">
                         <svg class="c-icon">
-                          <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie"></use>
+                          <use xlink:href="{{asset ('assets/icons/coreui/free-symbol-defs.svg#cui-chart-pie')}}"></use>
                         </svg> Charts</a></li>
                   </ul>
                   <div class="tab-content">

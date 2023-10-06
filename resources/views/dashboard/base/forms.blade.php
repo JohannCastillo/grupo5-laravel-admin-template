@@ -512,8 +512,9 @@
                             <div class="input-group">
                               <div class="input-group-prepend"><span class="input-group-text">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
-                                  </svg></span></div>
+                                    <use xlink:href="{{ asset('assets/icons/coreui/free-symbol-defs.svg#cui-user') }}"></use>
+                                  </svg>
+                                </span></div>
                               <input class="form-control" id="input1-group1" type="text" name="input1-group1" placeholder="Username" autocomplete="username">
                             </div>
                           </div>
@@ -524,7 +525,7 @@
                               <input class="form-control" id="input2-group1" type="email" name="input2-group1" placeholder="Email" autocomplete="email">
                               <div class="input-group-append"><span class="input-group-text">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open"></use>
+                                    <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open')}}"></use>
                                   </svg></span></div>
                             </div>
                           </div>
@@ -534,7 +535,7 @@
                             <div class="input-group">
                               <div class="input-group-prepend"><span class="input-group-text">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-euro"></use>
+                                    <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-euro')}}"></use>
                                   </svg></span></div>
                               <input class="form-control" id="input3-group1" type="text" name="input3-group1" placeholder="..">
                               <div class="input-group-append"><span class="input-group-text">.00</span></div>
@@ -559,7 +560,7 @@
                             <div class="input-group"><span class="input-group-prepend">
                                 <button class="btn btn-primary" type="button">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-magnifying-glass"></use>
+                                    <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-magnifying-glass')}}"></use>
                                   </svg> Search
                                 </button></span>
                               <input class="form-control" id="input1-group2" type="text" name="input1-group2" placeholder="Username" autocomplete="username">
@@ -579,13 +580,13 @@
                             <div class="input-group"><span class="input-group-prepend">
                                 <button class="btn btn-primary" type="button">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-facebook"></use>
+                                    <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-facebook')}}"></use>
                                   </svg>
                                 </button></span>
                               <input class="form-control" id="input3-group2" type="text" name="input3-group2" placeholder="Search"><span class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                   <svg class="c-icon">
-                                    <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-twitter"></use>
+                                    <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-twitter')}}"></use>
                                   </svg>
                                 </button></span>
                             </div>
@@ -785,7 +786,7 @@
                             <input class="form-control" id="username3" type="text" name="username3" autocomplete="username">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-user')}}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -795,7 +796,7 @@
                             <input class="form-control" id="email3" type="email" name="email3" autocomplete="email">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open')}}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -805,7 +806,7 @@
                             <input class="form-control" id="password3" type="password" name="password3" autocomplete="new-password">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked')}}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -826,7 +827,7 @@
                             <input class="form-control" id="username2" type="text" name="username2" placeholder="Username" autocomplete="username">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-user')}}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -835,7 +836,7 @@
                             <input class="form-control" id="email2" type="email" name="email2" placeholder="Email" autocomplete="email">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open') }}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -844,7 +845,7 @@
                             <input class="form-control" id="password2" type="password" name="password2" placeholder="Password" autocomplete="new-password">
                             <div class="input-group-append"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked') }}"></use>
                                 </svg></span></div>
                           </div>
                         </div>
@@ -864,7 +865,7 @@
                           <div class="input-group">
                             <div class="input-group-prepend"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-user') }}"></use>
                                 </svg></span></div>
                             <input class="form-control" id="username" type="text" name="username" placeholder="Username" autocomplete="username">
                           </div>
@@ -873,7 +874,7 @@
                           <div class="input-group">
                             <div class="input-group-prepend"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open') }}"></use>
                                 </svg></span></div>
                             <input class="form-control" id="email" type="email" name="email" placeholder="Email" autocomplete="email">
                           </div>
@@ -882,7 +883,7 @@
                           <div class="input-group">
                             <div class="input-group-prepend"><span class="input-group-text">
                                 <svg class="c-icon">
-                                  <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
+                                  <use xlink:href="{{asset('assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked')}}"></use>
                                 </svg></span></div>
                             <input class="form-control" id="password" type="password" name="password" placeholder="Password" autocomplete="new-password">
                           </div>
