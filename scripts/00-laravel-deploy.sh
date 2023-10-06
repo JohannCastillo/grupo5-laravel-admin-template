@@ -11,7 +11,6 @@ npm run dev
 
 echo "Caching config..."
 php artisan config:cache
-php artisan route:clear
 
 echo "Caching routes..."
 php artisan route:cache
