@@ -34,3 +34,7 @@ echo "*******************************************"
 
 echo "Login ..."
 ls /var/www/html/resources/views/auth
+
+echo "*******************************************"
+echo "Bootstrap app ..."
+ls /var/www/html/bootstrap/cache
