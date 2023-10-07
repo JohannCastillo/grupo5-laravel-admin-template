@@ -10,6 +10,8 @@ echo "Running npm run dev"
 npm run dev
 
 echo "Caching config..."
+php artisan route:clear
+php artisan config:clear
 php artisan config:cache
 
 echo "Caching routes..."
