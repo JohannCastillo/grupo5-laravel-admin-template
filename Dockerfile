@@ -1,20 +1,30 @@
-FROM richarvey/nginx-php-fpm:1.9.1
+# Utiliza una imagen de PHP que sea adecuada para Laravel
+FROM php:7.4-fpm
 
-COPY . .
+# Instala las extensiones de PHP necesarias para Laravel (puedes agregar más según tus necesidades)
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Image config
-ENV SKIP_COMPOSER 1
-ENV WEBROOT /var/www/html/public
-ENV PHP_ERRORS_STDERR 1
-ENV RUN_SCRIPTS 1
-ENV REAL_IP_HEADER 1
+# Instala Nginx
+RUN apt-get update && apt-get install -y nginx
 
-# Laravel config
-ENV APP_ENV production
-ENV APP_DEBUG false
-ENV LOG_CHANNEL stderr
+# Copia tus archivos de la aplicación en el contenedor
+COPY . /var/www/html
 
-# Allow composer to run as root
-ENV COMPOSER_ALLOW_SUPERUSER 1
+# Configura Nginx
+COPY nginx.conf /etc/nginx/sites-available/default
 
-CMD ["/start.sh"]
+# Configuración de Laravel
+WORKDIR /var/www/html
+
+# Establece el entorno de desarrollo
+ENV APP_ENV development
+ENV APP_DEBUG true
+
+# Instala Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Ejecuta Composer para instalar las dependencias de Laravel
+RUN composer install
+
+# Iniciar Nginx y PHP-FPM
+CMD service php7.4-fpm start && nginx -g "daemon off;"

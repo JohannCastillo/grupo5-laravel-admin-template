@@ -22,3 +22,6 @@ php artisan migrate:fresh --seed --force
 
 echo "Route listing..."
 php artisan route:list
+pwd
+ls /var/www/html/
+ls /var/www/html/public/
