@@ -17,5 +17,11 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate:fresh --seed --force
 
-echo "Route listing..."
-php artisan route:list
+# echo "Route listing..."
+# php artisan route:list
+
+echo "Views ..."
+ls /var/www/html/resources/views
+
+echo "Login ..."
+ls /var/www/html/resources/views/auth
