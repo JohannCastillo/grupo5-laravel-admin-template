@@ -40,9 +40,9 @@ echo "Bootstrap app ..."
 ls /var/www/html/bootstrap/cache
 
 echo "*******************************************"
-echo "Laravel Logs ......."
-cat /var/www/html/storage/logs/laravel-2023-10-07.log
+echo "Bootstrap Config ......."
+cat /var/www/html/bootstrap/cache/config.php
 
 echo   "************************************************"
-echo "Env content ....."
-cat /var/www/html/.env
+echo "Bootstrap routes ... "
+cat /var/www/html/bootstrap/cache/routes-v7.php
