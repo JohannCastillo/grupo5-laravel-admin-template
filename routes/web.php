@@ -11,10 +11,13 @@
 |
 */
 
-Route::group(['middleware' => ['get.menu']], function () {
-    Route::get('/', function () {           return view('dashboard.auth-temp.login'); });
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-    Route::group(['middleware' => ['role:user']], function () {
+Route::middleware(['get.menu'])->group(function () {
+    Route::get('/', function () {return view('dashboard.homepage'); });
+
+    Route::middleware(['role:user'])->group(function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
         Route::get('/typography', function () { return view('dashboard.typography'); });
         Route::get('/charts', function () {     return view('dashboard.charts'); });
@@ -72,7 +75,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         'destroy'   => 'resource.destroy'
     ]);
 
-    Route::group(['middleware' => ['role:admin']], function () {
+    Route::middleware(['role:admin'])->group(function () {
         Route::resource('bread',  'BreadController');   //create BREAD (resource)
         Route::resource('users',        'UsersController')->except( ['create', 'store'] );
         Route::resource('roles',        'RolesController');
