@@ -38,3 +38,11 @@ ls /var/www/html/resources/views/auth
 echo "*******************************************"
 echo "Bootstrap app ..."
 ls /var/www/html/bootstrap/cache
+
+echo "*******************************************"
+echo "Laravel Logs ......."
+cat /var/www/html/storage/logs/laravel-2023-10-07.log
+
+echo   "************************************************"
+echo "Env content ....."
+cat /var/www/html/.env
