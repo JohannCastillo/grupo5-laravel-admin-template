@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => ['get.menu']], function () {
-    Route::get('/', function () {           return view('dashboard.homepage'); });
+    Route::get('/', function () {           return view('dashboard.auth-temp.login'); });
 
     Route::group(['middleware' => ['role:user']], function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
