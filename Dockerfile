@@ -6,7 +6,7 @@ RUN apk add --update curl bash coreutils
 
 # Instalar nvm
 ENV NVM_DIR /root/.nvm
-ENV NODE_VERSION 14.17.0
+ENV NODE_VERSION 8.17.0
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
@@ -30,8 +30,6 @@ ENV LOG_CHANNEL stderr
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
-
-EXPOSE 8000
 
 CMD ["/start.sh"]
 
