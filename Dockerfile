@@ -61,6 +61,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs
 
+ENV COMPOSER_ALLOW_SUPERUSER 1
 # Install application dependencies using Composer and npm
 RUN composer install --no-interaction --optimize-autoloader && \
     npm install
