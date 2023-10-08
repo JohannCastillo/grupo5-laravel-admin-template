@@ -33,7 +33,6 @@
 
 # CMD ["/start.sh"]
 
-# Deploying with Fl0 *************************
 
 # Use an official PHP Apache image as the base PHP v 7.4.33
 FROM php:7.4-apache
@@ -51,15 +50,6 @@ RUN apt-get update && \
     curl \
     unzip
 
-#Install nvm and npm v8.17.0
-# Instalar nvm
-ENV NVM_DIR /root/.nvm
-ENV NODE_VERSION 8.17.0
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
-    . $NVM_DIR/nvm.sh && \
-    nvm install $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
-    nvm use default
 
 # Install PHP extensions required by your application
 RUN docker-php-ext-install pdo pdo_mysql
@@ -79,11 +69,11 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Copy your custom apache2.conf to the appropriate location in the container
-COPY apache2.conf /etc/apache2/apache2.conf
-
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
+
+# Update the default apache site with the config we created.
+ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 # Start Apache server
 CMD ["apache2-foreground"]
