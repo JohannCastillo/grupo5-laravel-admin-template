@@ -1,9 +1,24 @@
 FROM richarvey/nginx-php-fpm:1.9.1
 
-# Instalar dependencias para Node.js y npm
-RUN apk add --update curl && \
-    apk add --update nodejs npm && \
-    npm install -g npm@8.17.0
+# Instalar dependencias para nvm
+RUN apk add --update curl bash coreutils
+
+# Instalar nvm
+ENV NVM_DIR /root/.nvm
+ENV NODE_VERSION 14.17.0
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
+    . $NVM_DIR/nvm.sh && \
+    nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default
+
+# Asegurarse de que Node.js y npm estén disponibles en el PATH
+ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Instalar npm 8.17.0
+RUN npm install -g npm@8.17.0
     
 COPY . .
 
