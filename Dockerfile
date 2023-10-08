@@ -1,18 +1,10 @@
 FROM richarvey/nginx-php-fpm:1.9.1
 
-# Instalar dependencias para nvm
-RUN apt-get update && apt-get install -y \
-    curl \
-    build-essential \
-    libssl-dev
-
-# Instalar nvm y Node.js 8.17.0
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install 8.17.0
-
-# Configurar la versión de Node.js
-RUN export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm use 8.17.0
-
+# Instalar dependencias para Node.js y npm
+RUN apk add --update curl && \
+    apk add --update nodejs npm && \
+    npm install -g npm@8.17.0
+    
 COPY . .
 
 # Image config
