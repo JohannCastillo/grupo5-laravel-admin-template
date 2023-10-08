@@ -50,7 +50,6 @@ RUN apt-get update && \
     curl \
     unzip
 
-
 # Install PHP extensions required by your application
 RUN docker-php-ext-install pdo pdo_mysql
 
@@ -74,6 +73,24 @@ RUN a2enmod rewrite
 
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+
+# Run the desired commands
+RUN echo "Running composer" && \
+    composer global require hirak/prestissimo && \
+    composer install --working-dir=/var/www/html && \
+    echo "*******************************************" && \
+    echo "Running npm install" && \
+    npm install && \
+    echo "*******************************************" && \
+    echo "Caching config..." && \
+    php artisan route:clear && \
+    php artisan config:clear && \
+    php artisan config:cache && \
+    echo "*******************************************" && \
+    echo "Caching routes..." && \
+    php artisan route:cache && \
+    echo "Running migrations..." && \
+    php artisan migrate:fresh --seed --force
 
 # Start Apache server
 CMD ["apache2-foreground"]
