@@ -13,13 +13,6 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | b
     nvm alias default $NODE_VERSION && \
     nvm use default
 
-# Asegurarse de que Node.js y npm estén disponibles en el PATH
-ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
-# Instalar npm 8.17.0
-RUN npm install -g npm@8.17.0
-    
 COPY . .
 
 # Image config
