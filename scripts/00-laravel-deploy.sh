@@ -27,22 +27,22 @@ echo "*******************************************"
 # echo "Route listing..."
 # php artisan route:list
 
-echo "Views ..."
-ls /var/www/html/resources/views
+# echo "Views ..."
+# ls /var/www/html/resources/views
 
-echo "*******************************************"
+# echo "*******************************************"
 
-echo "Login ..."
-ls /var/www/html/resources/views/auth
+# echo "Login ..."
+# ls /var/www/html/resources/views/auth
 
-echo "*******************************************"
-echo "Bootstrap app ..."
-ls /var/www/html/bootstrap/cache
+# echo "*******************************************"
+# echo "Bootstrap app ..."
+# ls /var/www/html/bootstrap/cache
 
-echo "*******************************************"
-echo "Bootstrap Config ......."
-cat /var/www/html/bootstrap/cache/config.php
+# echo "*******************************************"
+# echo "Bootstrap Config ......."
+# cat /var/www/html/bootstrap/cache/config.php
 
-echo   "************************************************"
-echo "Bootstrap routes ... "
-cat /var/www/html/bootstrap/cache/routes-v7.php
+# echo   "************************************************"
+# echo "Bootstrap routes ... "
+# cat /var/www/html/bootstrap/cache/routes-v7.php
