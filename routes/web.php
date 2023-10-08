@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::middleware(['get.menu'])->group(function () {
     Route::get('/', function () {return view('dashboard.homepage'); });
-    Route::get('https://grupo5-laravel-admin-template.onrender.com/login', function () {return view('auth.login'); });
+
     Route::middleware(['role:user'])->group(function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
         Route::get('/typography', function () { return view('dashboard.typography'); });
