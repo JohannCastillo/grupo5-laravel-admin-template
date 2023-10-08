@@ -51,29 +51,39 @@ RUN apt-get update && \
     curl \
     unzip
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#Install nvm and npm v8.17.0
+# Instalar nvm
+ENV NVM_DIR /root/.nvm
+ENV NODE_VERSION 8.17.0
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
+    . $NVM_DIR/nvm.sh && \
+    nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default
 
 # Install PHP extensions required by your application
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Install Node.js and npm
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
+
+# Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
-# Install application dependencies using Composer and npm
-RUN composer install --no-interaction --optimize-autoloader && \
-    npm install
 
 # Copy your custom apache2.conf to the appropriate location in the container
 COPY apache2.conf /etc/apache2/apache2.conf
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
-
-# Run Laravel migrations
-RUN php artisan migrate:fresh --seed --force
 
 # Start Apache server
 CMD ["apache2-foreground"]
