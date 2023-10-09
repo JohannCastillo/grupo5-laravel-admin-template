@@ -35,7 +35,7 @@
 
 
 # Use an official PHP Apache image as the base PHP v 7.4.33
-FROM php:8.0-apache
+FROM php:7.4-apache
 
 # Set the working directory in the container
 WORKDIR /var/www/html
@@ -55,6 +55,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer self-update --2.5.8
 RUN docker-php-ext-install exif
 
 # Image config
