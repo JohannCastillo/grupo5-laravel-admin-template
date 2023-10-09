@@ -35,7 +35,7 @@
 
 
 # Use an official PHP Apache image as the base PHP v 7.4.33
-FROM php:7.4-apache
+FROM php:8.0-apache
 
 # Set the working directory in the container
 WORKDIR /var/www/html
@@ -55,6 +55,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN docker-php-ext-install exif
 
 # Image config
 ENV SKIP_COMPOSER 1
@@ -76,7 +77,7 @@ RUN a2enmod rewrite
 
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
-RUN echo "Container ID: \$(hostname)"
+
 
 RUN composer update
 RUN composer install --working-dir=/var/www/html
