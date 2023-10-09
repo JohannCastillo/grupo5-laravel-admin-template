@@ -15,8 +15,8 @@ COPY . /var/www/html/
 # Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
-chown -R www-data:www-data /var/www/html/public
-chmod -R 755 /var/www/html/public
+RUN chown -R www-data:www-data /var/www/html/public
+RUN chmod -R 755 /var/www/html/public
 # Cambiar el propietario y grupo del directorio de almacenamiento de Laravel a www-data
 RUN chown -R www-data:www-data /var/www/html/storage
 # Grant write permissions to the necessary directories
