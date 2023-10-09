@@ -25,8 +25,8 @@ RUN apt-get update && \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install PHP extensions required by your application
-RUN docker-php-ext-install pdo pdo_mysql
-# 
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pdo_sqlite
+#
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Configurar variables de entorno de la aplicación Laravel para producción
