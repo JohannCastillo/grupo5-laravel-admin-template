@@ -1,0 +1,12 @@
+grupo05-app-laravel.onrender.com {
+    # Raíz del sitio web
+    root * /var/www/public
+
+    # Configuración de PHP-FPM para Laravel
+    php_fastcgi app:9000
+
+    # Habilitar HTTPS con certificados automáticos de Let's Encrypt
+    tls {
+        dns cloudflare # O utiliza el método de DNS-01 adecuado
+    }
+}
