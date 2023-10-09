@@ -76,7 +76,9 @@ RUN a2enmod rewrite
 
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+RUN echo "Container ID: \$(hostname)"
 
+RUN composer update
 RUN composer install --working-dir=/var/www/html
 RUN npm install
 RUN php artisan migrate:fresh --seed --force
