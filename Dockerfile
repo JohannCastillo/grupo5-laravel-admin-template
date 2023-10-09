@@ -37,6 +37,6 @@ COPY apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 #Run migrations 
-#RUN php artisan migrate:fresh --seed --force
+RUN php artisan migrate:fresh --seed --force
 # Start Apache server
 CMD ["apache2-foreground"]
