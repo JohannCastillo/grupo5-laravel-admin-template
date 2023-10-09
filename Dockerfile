@@ -12,8 +12,11 @@ WORKDIR /var/www/html
 # Copy the application files to the container
 COPY . /var/www/html/
 
+#Otorgar permisos de lectura
+RUN chmod -R 444 /var/www/html
 # Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
 RUN chown -R www-data:www-data /var/www/html
+
 RUN chmod -R 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html/public
 RUN chmod -R 755 /var/www/html/public
