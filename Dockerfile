@@ -28,8 +28,10 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 # Install application dependencies using Composer
 RUN composer install --no-interaction --optimize-autoloader
 # Node modules
-
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+    apt-get install -y nodejs
 RUN npm install
+
 # Set up Apache virtual host
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
