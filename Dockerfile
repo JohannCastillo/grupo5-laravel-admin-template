@@ -49,4 +49,4 @@ RUN a2enmod rewrite
 CMD ["apache2-foreground"]
 
 #Run migrations 
-#RUN php artisan migrate:fresh --seed --force
+RUN php artisan migrate:fresh --seed --force
