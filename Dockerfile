@@ -21,12 +21,15 @@ RUN apt-get update && \
     git \
     unzip
 
+# Instalar las dependencias de desarrollo de PostgreSQL
+RUN apt-get install -y libpq-dev
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install PHP extensions required by your application
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pdo_sqlite
-#
+RUN docker-php-ext-install pdo pdo_pgsql pdo_sqlite
+# 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Configurar variables de entorno de la aplicación Laravel para producción
@@ -47,6 +50,3 @@ RUN a2enmod rewrite
 
 # Start Apache server
 CMD ["apache2-foreground"]
-
-#Run migrations 
-#RUN php artisan migrate:fresh --seed --force
