@@ -25,6 +25,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN docker-php-ext-install pdo pdo_mysql
 # 
 ENV COMPOSER_ALLOW_SUPERUSER=1
+
+# Configurar variables de entorno de la aplicación Laravel para producción
+ENV APP_ENV=production
+ENV APP_DEBUG=false
+ENV LOG_CHANNEL=stderr
+
 # Install application dependencies using Composer
 RUN composer install --no-interaction --optimize-autoloader
 # Node modules
