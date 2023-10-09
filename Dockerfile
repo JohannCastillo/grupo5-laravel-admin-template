@@ -12,21 +12,18 @@ WORKDIR /var/www/html
 # Copy the application files to the container
 COPY . /var/www/html/
 
-#Otorgar permisos de lectura
-RUN chmod -R 444 /var/www/html
 # Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
 RUN chown -R www-data:www-data /var/www/html
-
 RUN chmod -R 755 /var/www/html
+
 RUN chown -R www-data:www-data /var/www/html/public
 RUN chmod -R 755 /var/www/html/public
-# Cambiar el propietario y grupo del directorio de almacenamiento de Laravel a www-data
-RUN chown -R www-data:www-data /var/www/html/storage
+
 # Grant write permissions to the necessary directories
 RUN chown -R www-data:www-data /var/www/html/storage \
-    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 777 /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/bootstrap/cache
+    && chmod -R 777 /var/www/html/bootstrap
 
 # Install system dependencies
 RUN apt-get update && \
@@ -61,8 +58,8 @@ RUN a2enmod ssl
 # Set up Apache virtual host
 
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
-COPY certificado.crt /etc/apache2/ssl/cert.crt
-COPY clave-privada.key /etc/apache2/ssl/cert.key
+# COPY certificado.crt /etc/apache2/ssl/cert.crt
+# COPY clave-privada.key /etc/apache2/ssl/cert.key
 
 RUN a2enmod rewrite
 
