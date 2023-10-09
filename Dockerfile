@@ -50,5 +50,7 @@ RUN npm install
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
+EXPOSE 80
+
 # Start Apache server
 CMD ["apache2-foreground"]
