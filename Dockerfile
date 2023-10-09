@@ -71,7 +71,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     zip \
     unzip \
-    libpq-dev \  # Agregamos la dependencia de desarrollo de PostgreSQL && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    libpq-dev \ 
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql
 
 # Instalamos Composer globalmente
