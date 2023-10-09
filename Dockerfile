@@ -64,14 +64,14 @@
 # Utilizamos la imagen base de PHP con el manejador de paquetes Composer
 FROM php:7.4-fpm
 
-# Instalamos las extensiones PHP necesarias para Laravel
+# Instalamos las extensiones PHP necesarias para Laravel y PostgreSQL
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
     zip \
     unzip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    libpq-dev \  # Agregamos la dependencia de desarrollo de PostgreSQL && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql
 
 # Instalamos Composer globalmente
