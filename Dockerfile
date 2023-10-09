@@ -1,6 +1,11 @@
 # Use an official PHP Apache image as the base
 FROM php:8.0-apache
 
+#exif extension
+RUN apt-get update && \
+    apt-get install -y libexif-dev && \
+    docker-php-ext-install exif
+
 # Set the working directory in the container
 WORKDIR /var/www/html
 
