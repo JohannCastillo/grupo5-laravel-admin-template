@@ -13,7 +13,7 @@ WORKDIR /var/www/html
 COPY . /var/www/html/
 
 # Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
-RUN chmod -R 775 /var/www/html
+RUN chmod -R 777 /var/www/html
 
 # Install system dependencies
 RUN apt-get update && \
