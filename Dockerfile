@@ -50,8 +50,10 @@ RUN composer install --no-interaction --optimize-autoloader
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs
 RUN npm install
-
+# Enable SSL
+RUN a2enmod ssl
 # Set up Apache virtual host
+
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 COPY certificado.crt /etc/apache2/ssl/cert.crt
 COPY clave-privada.key /etc/apache2/ssl/cert.key
