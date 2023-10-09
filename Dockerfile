@@ -15,13 +15,13 @@ COPY . /var/www/html/
 # Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
 RUN chmod -R 775 /var/www/html
 # Cambiar el propietario y grupo del directorio de almacenamiento de Laravel a www-data
-# RUN chown -R www-data:www-data /var/www/html/storage
+RUN chown -R www-data:www-data /var/www/html/storage
 # Grant write permissions to the necessary directories
 RUN chown -R www-data:www-data /var/www/html/storage \
     && chmod -R 775 /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/bootstrap/cache
-    
+
 # Install system dependencies
 RUN apt-get update && \
     apt-get install -y \
