@@ -71,9 +71,9 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     zip \
     unzip \
-    libpq-dev \ 
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql
+    libpq-dev && \
+    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install gd pdo pdo_mysql pdo_pgsql
 
 # Instalamos Composer globalmente
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -87,8 +87,11 @@ COPY . /var/www
 # Instalamos Node.js y npm
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
 
-# Instalamos Caddy en el contenedor
-RUN apt-get update && apt-get install -y caddy
+# Agregamos el repositorio de Caddy y lo instalamos
+RUN apt-get update && apt-get install -y software-properties-common && \
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | apt-key add - && \
+    add-apt-repository 'deb [arch=amd64] https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt stable main' && \
+    apt-get update && apt-get install -y caddy
 
 # Instalamos las dependencias de Composer
 RUN composer install
