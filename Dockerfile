@@ -18,13 +18,18 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install PHP extensions required by your application
 RUN docker-php-ext-install pdo pdo_mysql
-
+# 
+ENV COMPOSER_ALLOW_SUPERUSER=1
 # Install application dependencies using Composer
 RUN composer install --no-interaction --optimize-autoloader
+# Node modules
 
+RUN npm install
 # Set up Apache virtual host
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
+#Run migrations 
+RUN php artisan migrate:fresh --seed --force
 # Start Apache server
 CMD ["apache2-foreground"]
