@@ -12,6 +12,12 @@ WORKDIR /var/www/html
 # Copy the application files to the container
 COPY . /var/www/html/
 
+# Cambiar los permisos de todo el directorio /var/www/html
+RUN chown -R http:http /var/www/html
+
+# Otorgar permisos de escritura a todo el directorio /var/www/html si es necesario
+RUN chmod -R 775 /var/www/html
+
 # Install system dependencies
 RUN apt-get update && \
     apt-get install -y \
@@ -45,6 +51,5 @@ RUN a2enmod rewrite
 # Start Apache server
 CMD ["apache2-foreground"]
 
-
 #Run migrations 
-# RUN php artisan migrate:fresh --seed --force
+RUN php artisan migrate:fresh --seed --force
