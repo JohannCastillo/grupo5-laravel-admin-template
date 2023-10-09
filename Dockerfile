@@ -28,7 +28,7 @@ RUN apt-get install -y libpq-dev
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install PHP extensions required by your application
-RUN docker-php-ext-install pdo pdo_pgsql pdo_sqlite
+RUN docker-php-ext-install pdo pdo_pgsql
 # 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
