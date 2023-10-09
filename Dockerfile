@@ -1,5 +1,5 @@
 # Use an official PHP Apache image as the base
-FROM php:7.2.5-apache
+FROM php:7.4.33-apache
 
 #exif extension
 RUN apt-get update && \
